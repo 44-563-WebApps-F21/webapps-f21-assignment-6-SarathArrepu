@@ -2,7 +2,7 @@
 <html>
   <body>
     <h4>Sarath orders a car</h4>
-
+    <div class="container-fluid">
     <form>
       <label for="electric"> electric</label>
       <input
@@ -47,10 +47,11 @@
       <label for="name1">enter a value</label>
       <input type="text" id="form1_name1" name="form1_name1" /> <br>
 
-      <input type="button" onclick="updatecar()" value="Update the car" />
+      <input type="button" onclick="updateCar()" value="Update the car" />
     </form>
 
     <p id="res2">This text will be replaced</p>
+    </div>
 
     <script>
       var my_car ;
@@ -82,11 +83,12 @@
       }
 
       function updateCar() {
+        console.log("Getting form values");
         my_car = " ";
         property = document.getElementById("form1_name").value
         value = document.getElementById("form1_name1").value
-        out = document.getElementById("res2")
         my_car = property + ":" + value;
+        out = document.getElementById("res2")
         out.innerHTML = my_car
       }
     </script>
