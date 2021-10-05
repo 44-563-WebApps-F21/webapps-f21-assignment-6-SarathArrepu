@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>This is my First Javascript</title>
+
+        </head>
+ 
+<body>
+<h2>Pass phrase by Sarath Arrepu</h2>
+
+<h2>Getting input</h2>
+
+<form>
+    <label for="form1_secret">Enter the secret phrase </label>
+    <input type ="password" id="form1_secret" name="form1_secret" class ="form-control" value="Let me in" min=10 max=50 step=2 value=30> <br>
+
+    <label for="form1_guess">Enter a phrase</label>
+    <input type ="text" id="form1_guess"  class ="form-control" name="form1_guess" autofocus> <br>
+
+    <input type="button" onclick="processGuess()" class="btn btn-primary btn-md" value="Check the phrase">
+</form>
+
+
+<p id="result">results </p>
+<div>
+    <img id = "anima" src="pony.jpg" alt="Mighty Pony" width="200" height="200" ><br>
+    <input type="button" onclick="newImage()" class="btn btn-primary btn-md" value="click">
+</div>
+
+<script> 
+
+function processGuess (){
+    var correct = 0;
+    var wrong = 0;
+
+    console.log("Getting form values")
+    secret = document.getElementById("form1_secret").value
+    guess = document.getElementById("form1_guess").value
+    
+    out = document.getElementById("result")
+    if(secret == guess){
+        correct = correct + 1;
+        alert("Access allowed")
+        out.innerHTML = "Correct Count" + correct
+    } else {
+        wrong += 1;
+        alert("Access denied")
+        out.innerHTML = "Wrong Count" + wrong
+    }
+}
+
+ 
+var usingimage = 1;
+function newImage(){
+    
+    switch(usingimage){
+        case 1:
+        document.getElementById("anima").src =  "pony.jpg" 
+        usingimage = 2;
+        break;
+
+        case 2:
+        document.getElementById("anima").src = "raccoon-leaning-ledge.jpg"
+        usingimage = 3;
+        break;
+
+        case 3:
+        document.getElementById("anima").src = "GTY_rabbit_sr_140508_4x3_992.jpg"
+        usingimage = 1;
+        break;
+
+        default:
+        document.getElementById("anima").src =  "pony.jpg" 
+        usingimage = 1;
+        break;
+
+
+    }
+}
+</script>
+
+</body>
+</html> 
